@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Product Sans";
+    src: url('ProductSans-Regular.ttf');
+}
+
+.display{
+    -fx-font-family: "Product Sans";
+    -fx-font-size: 44px;
+    -fx-background-radius: 0 0 20px 20px;
+    -fx-background-color: #e0edff;
+}
+
+.text {
+    -fx-font-family: "Product Sans";
+}
+
+.button{
+    -fx-font-family: "Product Sans";
+    -fx-font-size: 19px;
+    -fx-background-radius: 50%;
+    -fx-background-color:  #c3eed2;
+}
+
+.button:pressed{
+    -fx-background-radius: 35%;
+    -fx-opacity: .8;
+}

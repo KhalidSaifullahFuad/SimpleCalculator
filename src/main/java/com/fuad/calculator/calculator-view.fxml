@@ -1,143 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0"
-            prefWidth="310.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.fuad.calculator.CalculatorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fuad.calculator.CalculatorController">
     <children>
-        <VBox alignment="CENTER" prefHeight="255.0" prefWidth="265.0" style="-fx-background-color: #ffffff;"
-              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" prefHeight="255.0" prefWidth="265.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label fx:id="display" alignment="BOTTOM_RIGHT" prefHeight="202.0" prefWidth="310.0"
-                       styleClass="display" stylesheets="@font-family.css" text="0" textAlignment="RIGHT"
-                       wrapText="true">
-                    <font>
-                        <Font size="44.0"/>
-                    </font>
-                    <VBox.margin>
-                        <Insets/>
-                    </VBox.margin>
+                <Label fx:id="secondaryDisplay" alignment="BOTTOM_RIGHT" prefHeight="202.0" prefWidth="310.0" styleClass="secondary-display" stylesheets="@font-family.css" text="" textAlignment="RIGHT" wrapText="true">
                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                        <Insets left="15.0" right="15.0" top="15.0" />
                     </padding>
                 </Label>
+            <Label fx:id="display" alignment="BOTTOM_RIGHT" prefHeight="202.0" prefWidth="310.0" styleClass="display" stylesheets="@font-family.css" text="0" textAlignment="RIGHT" wrapText="false">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </padding>
+            </Label>
                 <GridPane alignment="CENTER" hgap="10.0" prefHeight="219.0" prefWidth="191.0" vgap="10.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"/>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"/>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"/>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES"/>
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES"/>
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES"/>
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES"/>
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Button fx:id="btnZero" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="0" GridPane.columnIndex="1"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                        <Button fx:id="btnZero" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnThree" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="3" GridPane.columnIndex="2"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                        <Button fx:id="btnThree" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnTwo" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="2" GridPane.columnIndex="1"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                        <Button fx:id="btnTwo" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnOne" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="1" GridPane.halignment="CENTER"
-                                GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                        <Button fx:id="btnOne" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnEqual" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #9cc3ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="=" GridPane.columnIndex="3"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                        <Button fx:id="btnEqual" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #9cc3ff;" styleClass="button" stylesheets="@font-family.css" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnDecimal" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="." GridPane.columnIndex="2"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER"/>
-                        <Button fx:id="btnSign" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="±" GridPane.halignment="CENTER"
-                                GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                        <Button fx:id="btnDecimal" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                        <Button fx:id="btnSign" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="±" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnEight" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="8" GridPane.columnIndex="1"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <Button fx:id="btnEight" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="7" GridPane.halignment="CENTER"
-                                GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <Button fx:id="btnSeven" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnMul" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="×" GridPane.columnIndex="3"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <Button fx:id="btnMul" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button" stylesheets="@font-family.css" text="×" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnSix" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="6" GridPane.columnIndex="2"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <Button fx:id="btnSix" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnFive" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="5" GridPane.columnIndex="1"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <Button fx:id="btnFive" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnFour" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="4" GridPane.halignment="CENTER"
-                                GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <Button fx:id="btnFour" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnSub" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="-" GridPane.columnIndex="3"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <Button fx:id="btnSub" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button" stylesheets="@font-family.css" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnDiv" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="÷" GridPane.columnIndex="3"
-                                GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                        <Button fx:id="btnNine" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button"
-                                stylesheets="@font-family.css" text="9" GridPane.columnIndex="2"
-                                GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <Button fx:id="btnDiv" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button" stylesheets="@font-family.css" text="÷" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="btnNine" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #d6e3e8;" styleClass="button" stylesheets="@font-family.css" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         </Button>
-                        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #9be7b7;" styleClass="button"
-                                stylesheets="@font-family.css" text="AC">
+                        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #9be7b7;" styleClass="button" stylesheets="@font-family.css" text="AC">
                         </Button>
-                        <Button fx:id="btnBackspace" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="&lt;-" GridPane.columnIndex="1">
+                        <Button fx:id="btnBackspace" mnemonicParsing="false" onAction="#doDisplay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button" stylesheets="@font-family.css" text="&lt;-" GridPane.columnIndex="1">
                         </Button>
-                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0"
-                                prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#doOperation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button" stylesheets="@font-family.css" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
                         </Button>
-                        <Button fx:id="btnPercent" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0"
-                                style="-fx-background-color: #c3e7ff;" styleClass="button"
-                                stylesheets="@font-family.css" text="\%" GridPane.columnIndex="2">
+                        <Button fx:id="btnPercent" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #c3e7ff;" styleClass="button" stylesheets="@font-family.css" text="\%" GridPane.columnIndex="2">
                         </Button>
                     </children>
                     <VBox.margin>
-                        <Insets bottom="20.0" left="15.0" right="15.0" top="15.0"/>
+                        <Insets bottom="20.0" left="15.0" right="15.0" top="15.0" />
                     </VBox.margin>
                 </GridPane>
             </children>

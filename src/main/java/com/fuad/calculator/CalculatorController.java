@@ -38,6 +38,9 @@ public class CalculatorController {
     private Button btnSub;
 
     @FXML
+    private Label secondaryDisplay;
+
+    @FXML
     private Label display;
 
     private double number1;
@@ -49,6 +52,7 @@ public class CalculatorController {
     private String displayText = "0";
 
     void initialize(){
+        secondaryDisplay.setText("");
         displayText = "0";
         number1 = 0;
         number2 = 0;
@@ -68,11 +72,9 @@ public class CalculatorController {
             displayText = (displayText.equals("0") || !displayText.contains(".") ? displayText + "." : displayText);
         } else if (btnSign.equals(button)) {
             displayText = (Double.parseDouble(displayText) > 0 ? "-"+displayText : !displayText.equals("0") ? displayText.substring(1) : displayText);
-        } else{
+        } else if (displayText.length() < 13) {
             displayText = (displayText.equals("0") ? numberText : displayText + numberText);
         }
-
-        System.out.println("DisplayText: "+displayText);
 
         display.setText(displayText);
     }
@@ -85,16 +87,16 @@ public class CalculatorController {
             if(operator != null){
                 number2 = Double.parseDouble(display.getText());
                 String result = calculate(number1, number2, operator);
+                secondaryDisplay.setText(secondaryDisplay.getText() + " " + display.getText());
                 display.setText(result);
-//                number1 = number2;
+                displayText = "";
             }
         }else{
-                number1 = Double.parseDouble(display.getText());
-            displayText = "";
+            number1 = Double.parseDouble(display.getText());
             operator = button;
+            secondaryDisplay.setText(display.getText() + " " + operator.getText());
+            displayText = "";
         }
-        System.out.println("DisplayText: "+displayText);
-        System.out.println("number1: "+number1);
     }
 
     public String calculate(double number1, double number2, Button operator){

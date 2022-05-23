@@ -3,6 +3,12 @@
     src: url('ProductSans-Regular.ttf');
 }
 
+.secondary-display{
+    -fx-font-family: "Product Sans";
+    -fx-font-size: 24px;
+    -fx-background-color: #e0edff;
+}
+
 .display{
     -fx-font-family: "Product Sans";
     -fx-font-size: 44px;

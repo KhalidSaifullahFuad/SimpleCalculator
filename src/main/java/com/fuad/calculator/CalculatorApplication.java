@@ -22,6 +22,7 @@ public class CalculatorApplication extends Application {
         Scene scene = new Scene(root);
         stage.setTitle("Calculator");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
 //        scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
